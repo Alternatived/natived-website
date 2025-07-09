@@ -6,36 +6,51 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="terminal">
-    <div class="line">Welcome to <span class="highlight">natived</span>'s terminal</div>
-    <div class="line">Type <span class="command">help</span> to explore.</div>
-    <div class="line blink-cursor">></div>
+  <div id="overlay-grid"></div>
 
-    <section class="about">
+  <section class="screen" id="landing">
+    <div class="terminal">
+      <div class="line">Welcome to <span class="highlight">natived</span>'s terminal</div>
+      <div class="line">Type <span class="command">help</span> or press ↓ to explore.</div>
+      <div class="input-line">
+        <span>> </span><input type="text" id="terminal-input" autofocus>
+      </div>
+      <div id="terminal-response"></div>
+    </div>
+    <div class="down-arrow" onclick="scrollToSection('about')">↓</div>
+  </section>
+
+  <section class="screen" id="about">
+    <div class="terminal">
       <div class="section-title">[ about ]</div>
-      <p>digital artist, glitch enthusiast, crypto-native explorer.<br>finding meaning in noise and form in chaos.</p>
-    </section>
+      <p>digital artist, glitch enthusiast, crypto-native explorer.<br>
+         finding meaning in noise and form in chaos.</p>
+    </div>
+    <div class="down-arrow" onclick="scrollToSection('links')">↓</div>
+  </section>
 
-    <section class="links">
+  <section class="screen" id="links">
+    <div class="terminal">
       <div class="section-title">[ links ]</div>
       <ul>
         <li>> <a href="https://github.com/Alternatived" target="_blank">github</a></li>
         <li>> <a href="https://warpcast.com/alternatived" target="_blank">farcaster</a></li>
         <li>> <a href="#" target="_blank">tezos collection</a></li>
       </ul>
-    </section>
+    </div>
+    <div class="down-arrow" onclick="scrollToSection('projects')">↓</div>
+  </section>
 
-    <section class="projects">
+  <section class="screen" id="projects">
+    <div class="terminal">
       <div class="section-title">[ projects ]</div>
       <div class="gallery">
-        <!-- Add your project thumbnails here -->
         <img src="assets/projects/proj1.png" alt="Project 1">
         <img src="assets/projects/proj2.png" alt="Project 2">
         <img src="assets/projects/proj3.png" alt="Project 3">
-        <!-- Add more as needed -->
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 
   <script src="script.js"></script>
 </body>
