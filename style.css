@@ -1,0 +1,83 @@
+/* style.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #33ff33;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+}
+
+a {
+  color: #33ff33;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.terminal {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.line {
+  margin-bottom: 10px;
+}
+
+.blink-cursor::after {
+  content: '_';
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+.highlight {
+  color: #66ff66;
+  font-weight: bold;
+}
+
+.section-title {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #66ff66;
+  border-bottom: 1px dashed #33ff33;
+  padding-bottom: 2px;
+}
+
+.about p {
+  margin-left: 2ch;
+  line-height: 1.4em;
+}
+
+.links ul {
+  list-style: none;
+  padding-left: 2ch;
+}
+
+.links li {
+  margin-bottom: 5px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+  padding-left: 2ch;
+}
+
+.gallery img {
+  width: 100%;
+  border: 1px solid #33ff33;
+  padding: 4px;
+  background-color: #111;
+  image-rendering: pixelated;
+}
