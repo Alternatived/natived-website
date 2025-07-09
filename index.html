@@ -8,6 +8,7 @@
 <body>
   <div id="overlay-grid"></div>
 
+  <!-- Landing Section -->
   <section class="screen" id="landing">
     <div class="terminal">
       <div class="line">Welcome to <span class="highlight">natived</span>'s terminal</div>
@@ -20,15 +21,18 @@
     <div class="down-arrow" onclick="scrollToSection('about')">↓</div>
   </section>
 
+  <!-- About Section -->
   <section class="screen" id="about">
     <div class="terminal">
       <div class="section-title">[ about ]</div>
       <p>digital artist, glitch enthusiast, crypto-native explorer.<br>
          finding meaning in noise and form in chaos.</p>
     </div>
+    <div class="up-arrow" onclick="scrollToSection('landing')">↑</div>
     <div class="down-arrow" onclick="scrollToSection('links')">↓</div>
   </section>
 
+  <!-- Links Section -->
   <section class="screen" id="links">
     <div class="terminal">
       <div class="section-title">[ links ]</div>
@@ -38,18 +42,21 @@
         <li>> <a href="#" target="_blank">tezos collection</a></li>
       </ul>
     </div>
+    <div class="up-arrow" onclick="scrollToSection('about')">↑</div>
     <div class="down-arrow" onclick="scrollToSection('projects')">↓</div>
   </section>
 
+  <!-- Projects Section -->
   <section class="screen" id="projects">
     <div class="terminal">
       <div class="section-title">[ projects ]</div>
       <div class="gallery">
-        <img src="assets/projects/proj1.png" alt="Project 1">
-        <img src="assets/projects/proj2.png" alt="Project 2">
-        <img src="assets/projects/proj3.png" alt="Project 3">
+        <img src="https://assets.objkt.media/file/assets-003/bafybeicmcs67f2c64pyx7bkdfiwifqoreecheb463yscrwtodhgtolopve/artifact" alt="NFT 1">
+        <img src="https://assets.objkt.media/file/assets-003/bafybeihwdy67galolmspdjxm3l3tisdqnwu4caecaj4fdnczvlmumscbvq/artifact" alt="NFT 2">
+        <img src="https://assets.objkt.media/file/assets-003/bafybeihmwgmzyea5ni4faz6socal4gski2rllyibi4zmasbymudznwc57u/artifact" alt="NFT 3">
       </div>
     </div>
+    <div class="up-arrow" onclick="scrollToSection('links')">↑</div>
   </section>
 
   <script src="script.js"></script>
