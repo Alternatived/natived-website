@@ -1,63 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>natived :: terminal</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="overlay-grid"></div>
 
-  <!-- Landing Section -->
-  <section class="screen" id="landing">
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <ul>
+      <li class="dropdown">
+        <span>Objkt ▾</span>
+        <ul class="dropdown-menu">
+          <li><a href="https://objkt.com/@natived" target="_blank">Natived</a></li>
+          <li><a href="https://objkt.com/users/tz1apGa8v4Y7W2Juu9Bzf4xqRg1ukc7diycy" target="_blank">Alternatived</a></li>
+          <li><a href="https://objkt.com/@generatived" target="_blank">Generatived</a></li>
+        </ul>
+      </li>
+      <li><a href="https://opensea.io/collection/natived" target="_blank">Opensea</a></li>
+      <li><a href="https://x.com/natived_" target="_blank">X</a></li>
+      <li><a href="https://farcaster.xyz/natived" target="_blank">Farcaster</a></li>
+    </ul>
+  </nav>
+
+  <!-- TERMINAL -->
+  <main class="terminal-container">
     <div class="terminal">
       <div class="line">Welcome to <span class="highlight">natived</span>'s terminal</div>
-      <div class="line">Type <span class="command">help</span> or press ↓ to explore.</div>
+      <div class="line">Type <span class="command">help</span> to learn more.</div>
       <div class="input-line">
-        <span>> </span><input type="text" id="terminal-input" autofocus>
+        <span>> </span><input type="text" id="terminal-input" autocomplete="off" autofocus />
       </div>
       <div id="terminal-response"></div>
     </div>
-    <div class="down-arrow" onclick="scrollToSection('about')">↓</div>
-  </section>
+  </main>
 
-  <!-- About Section -->
-  <section class="screen" id="about">
-    <div class="terminal">
-      <div class="section-title">[ about ]</div>
-      <p>digital artist, glitch enthusiast, crypto-native explorer.<br>
-         finding meaning in noise and form in chaos.</p>
-    </div>
-    <div class="up-arrow" onclick="scrollToSection('landing')">↑</div>
-    <div class="down-arrow" onclick="scrollToSection('links')">↓</div>
-  </section>
-
-  <!-- Links Section -->
-  <section class="screen" id="links">
-    <div class="terminal">
-      <div class="section-title">[ links ]</div>
-      <ul>
-        <li>> <a href="https://github.com/Alternatived" target="_blank">github</a></li>
-        <li>> <a href="https://warpcast.com/alternatived" target="_blank">farcaster</a></li>
-        <li>> <a href="#" target="_blank">tezos collection</a></li>
-      </ul>
-    </div>
-    <div class="up-arrow" onclick="scrollToSection('about')">↑</div>
-    <div class="down-arrow" onclick="scrollToSection('projects')">↓</div>
-  </section>
-
-  <!-- Projects Section -->
-  <section class="screen" id="projects">
-    <div class="terminal">
-      <div class="section-title">[ projects ]</div>
-      <div class="gallery">
-        <img src="https://assets.objkt.media/file/assets-003/bafybeicmcs67f2c64pyx7bkdfiwifqoreecheb463yscrwtodhgtolopve/artifact" alt="NFT 1">
-        <img src="https://assets.objkt.media/file/assets-003/bafybeihwdy67galolmspdjxm3l3tisdqnwu4caecaj4fdnczvlmumscbvq/artifact" alt="NFT 2">
-        <img src="https://assets.objkt.media/file/assets-003/bafybeihmwgmzyea5ni4faz6socal4gski2rllyibi4zmasbymudznwc57u/artifact" alt="NFT 3">
-      </div>
-    </div>
-    <div class="up-arrow" onclick="scrollToSection('links')">↑</div>
-  </section>
+  <!-- WIREFRAME EFFECT -->
+  <canvas id="wireframe-canvas"></canvas>
 
   <script src="script.js"></script>
 </body>
