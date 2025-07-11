@@ -1,66 +1,41 @@
-// Terminal commands
 document.addEventListener("DOMContentLoaded", () => {
-  const input = document.getElementById("terminal-input");
-  const response = document.getElementById("terminal-response");
-
-  input.addEventListener("keydown", (e) => {
+  const input = document.getElementById("terminal-input"), res = document.getElementById("terminal-response");
+  input.addEventListener("keydown", e => {
     if (e.key === "Enter") {
       const cmd = input.value.trim().toLowerCase();
-      handleCommand(cmd);
-      input.value = "";
+      if (cmd === "help") {
+        res.innerText = `About:
+Experimenting with digital art since I got my first computer at 10. From 2D, photo/video editing to 3D art since 2019. Music is also a big part — I learned instruments and production, and I approach music like I do 3D art.
+
+Art:
+A curious mind always ready to experiment. Influenced by 90s films, games, psychedelic and op‑art styles. Joining the blockchain in 2021 and minting on Tezos transformed my creative process.`;
+      } else {
+        res.innerText = `Unknown command: ${cmd}`;
+      }
+      input.value = '';
     }
   });
 });
 
-function handleCommand(cmd) {
-  const res = document.getElementById("terminal-response");
-  switch (cmd) {
-    case "help":
-      res.innerText = `About:
-Experimenting with digital art since I got my first computer at 10 years old. From 2D drawings to photo/video editing, I discovered 3D art in 2019 and have been exploring it ever since. I'm also a huge fan of music, which led me to learn instruments and music production — I approach music the same way I create art.
+// Wireframe canvas and cursor distortion
+const canvas = document.getElementById("wireframe-canvas"), ctx = canvas.getContext("2d");
+let w = canvas.width = window.innerWidth, h = canvas.height = window.innerHeight;
+let mouse = { x: w/2, y: h/2 };
+window.addEventListener("mousemove", e => mouse = { x: e.clientX, y: e.clientY });
+window.addEventListener("resize", () => { w=canvas.width=window.innerWidth; h=canvas.height=window.innerHeight; });
 
-Art:
-I'm a curious mind constantly looking to learn and experiment. Influenced by 90s movies, video games, psychedelic artists, and op art masters. When I joined the blockchain space in 2021 and minted my first work on Tezos, my creative vision evolved drastically — adapting to this new medium.`;
-      break;
-    default:
-      res.innerText = `Unknown command: ${cmd}`;
-  }
-}
-
-// Wireframe cursor animation
-const canvas = document.getElementById('wireframe-canvas');
-const ctx = canvas.getContext('2d');
-
-let w = canvas.width = window.innerWidth;
-let h = canvas.height = window.innerHeight;
-
-window.addEventListener('resize', () => {
-  w = canvas.width = window.innerWidth;
-  h = canvas.height = window.innerHeight;
-});
-
-let mouse = { x: w / 2, y: h / 2 };
-window.addEventListener('mousemove', e => {
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
-});
-
-function drawGrid() {
-  ctx.clearRect(0, 0, w, h);
-  ctx.strokeStyle = '#33ff33';
-  ctx.lineWidth = 0.2;
-
-  for (let x = 0; x < w; x += 30) {
-    for (let y = 0; y < h; y += 30) {
-      const dx = (x - mouse.x) * 0.005;
-      const dy = (y - mouse.y) * 0.005;
-      ctx.beginPath();
-      ctx.rect(x + dx * 20, y + dy * 20, 28, 28);
-      ctx.stroke();
+function draw(){
+  ctx.clearRect(0,0,w,h);
+  ctx.strokeStyle = "#33ff33";
+  ctx.lineWidth = 0.4;
+  for(let x=0;x<w;x+=30){
+    for(let y=0;y<h;y+=30){
+      const dx = (x - mouse.x) * 0.02;
+      const dy = (y - mouse.y) * 0.02;
+      ctx.strokeRect(x + dx, y + dy, 28, 28);
     }
   }
-
-  requestAnimationFrame(drawGrid);
+  requestAnimationFrame(draw);
 }
 
-drawGrid();
+draw();
