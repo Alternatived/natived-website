@@ -1,45 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>natived :: terminal</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="overlay-grid"></div>
-
-  <!-- NAVBAR -->
+  <canvas id="wireframe-canvas"></canvas>
   <nav class="navbar">
-    <ul>
-      <li class="dropdown">
-        <span>Objkt ▾</span>
-        <ul class="dropdown-menu">
-          <li><a href="https://objkt.com/@natived" target="_blank">Natived</a></li>
-          <li><a href="https://objkt.com/users/tz1apGa8v4Y7W2Juu9Bzf4xqRg1ukc7diycy" target="_blank">Alternatived</a></li>
-          <li><a href="https://objkt.com/@generatived" target="_blank">Generatived</a></li>
-        </ul>
-      </li>
-      <li><a href="https://opensea.io/collection/natived" target="_blank">Opensea</a></li>
-      <li><a href="https://x.com/natived_" target="_blank">X</a></li>
-      <li><a href="https://farcaster.xyz/natived" target="_blank">Farcaster</a></li>
-    </ul>
+    <div class="nav-container">
+      <div class="dropdown">
+        <button class="dropbtn">Objkt ▾</button>
+        <div class="dropdown-content">
+          <a href="https://objkt.com/@natived" target="_blank">Natived</a>
+          <a href="https://objkt.com/users/tz1apGa8v4Y7W2Juu9Bzf4xqRg1ukc7diycy" target="_blank">Alternatived</a>
+          <a href="https://objkt.com/@generatived" target="_blank">Generatived</a>
+        </div>
+      </div>
+      <a href="https://opensea.io/collection/natived" target="_blank">Opensea</a>
+      <a href="https://x.com/natived_" target="_blank">X</a>
+      <a href="https://farcaster.xyz/natived" target="_blank">Farcaster</a>
+    </div>
   </nav>
 
-  <!-- TERMINAL -->
   <main class="terminal-container">
     <div class="terminal">
       <div class="line">Welcome to <span class="highlight">natived</span>'s terminal</div>
       <div class="line">Type <span class="command">help</span> to learn more.</div>
-      <div class="input-line">
-        <span>> </span><input type="text" id="terminal-input" autocomplete="off" autofocus />
-      </div>
+      <div class="input-line"><span>&gt; </span><input id="terminal-input" autocomplete="off" autofocus/></div>
       <div id="terminal-response"></div>
     </div>
   </main>
-
-  <!-- WIREFRAME EFFECT -->
-  <canvas id="wireframe-canvas"></canvas>
 
   <script src="script.js"></script>
 </body>
