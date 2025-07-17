@@ -1,4 +1,3 @@
-/* Reset and base */
 body {
   margin: 0;
   font-family: monospace;
@@ -8,137 +7,80 @@ body {
 
 .green-text {
   color: #00ff00;
-  text-decoration: none;
 }
 
-.subtitle {
+.small-text {
+  font-size: 0.9em;
   margin-bottom: 1em;
 }
 
-/* Main hero container split left/right */
 .hero {
   display: flex;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  position: relative;
 }
 
-/* Left half with black gradient blend */
 .overlay-half {
-  width: 50vw;
-  height: 100vh;
-  position: relative;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, black 0%, black calc(100% - 50px), transparent 100%);
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .black-gradient {
-  width: 100%;
-  height: 100%;
-  /* Blend starts 50% minus 25px, smooth transition to transparent */
-  background: linear-gradient(to right, black calc(50% - 25px), transparent 50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2em;
-  box-sizing: border-box;
-}
-
-/* Text content container */
-.text-box {
   max-width: 500px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  z-index: 3;
+  padding: 2em;
 }
 
-/* Header */
 .text-box h1 {
   font-size: 2em;
-  margin-bottom: 0.5em;
-}
-
-/* Link blocks and details */
-
-.link-block {
-  display: block;
-  margin-bottom: 1em;
   font-weight: bold;
-  cursor: pointer;
-}
-
-.link-block a {
-  display: block;
-  margin: 0.25em 0;
+  margin-bottom: 0.3em;
   color: #00ff00;
-  text-decoration: none;
-  font-weight: normal;
 }
 
-.link-block a:hover {
-  text-decoration: underline;
+.text-box p {
+  margin: 0.5em 0;
+  color: #00ff00;
 }
 
 details summary {
   cursor: pointer;
   font-weight: bold;
   margin-top: 1em;
-  list-style: none;
-  outline: none;
-  user-select: none;
+  color: #00ff00;
 }
 
-details p, details a {
+details p {
   margin-left: 1em;
   margin-top: 0.5em;
   color: #00ff00;
 }
 
-details a {
-  display: block;
-  text-decoration: none;
-  font-weight: normal;
-}
-
-details a:hover {
-  text-decoration: underline;
-}
-
-/* Right half with GIF */
-
 .gif-container {
-  width: 50vw;
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
-  position: fixed;
+  position: absolute;
   top: 0;
-  right: 0;
-  z-index: 1;
+  left: 0;
+  z-index: 0;
 }
 
 .gif-container img {
-  width: 100vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
   height: 100vh;
-  object-fit: cover;
-  object-position: right;
-}
-
-/* Responsive for smaller screens */
-@media screen and (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-  }
-  .overlay-half, .gif-container {
-    width: 100vw;
-    height: 50vh;
-  }
-  .gif-container {
-    position: relative;
-  }
-  .black-gradient {
-    padding: 1em;
-  }
-  .text-box h1 {
-    font-size: 1.5em;
-  }
+  object-fit: contain;
 }
