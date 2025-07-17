@@ -1,3 +1,4 @@
+/* Reset and base */
 body {
   margin: 0;
   font-family: monospace;
@@ -7,136 +8,112 @@ body {
 
 .green-text {
   color: #00ff00;
+  text-decoration: none;
 }
 
-.small-text {
-  font-size: 0.9em;
+.subtitle {
   margin-bottom: 1em;
 }
 
-/* DROPDOWN FOR OBJKT */
-.dropdown {
-  position: relative;
-  display: inline-block;
-  margin: 0 0.5em;
-}
-
-.dropdown .dropbtn {
-  color: #00ff00;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-family: monospace;
-  font-size: 1em;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: black;
-  border: 1px solid #00ff00;
-  min-width: 160px;
-  z-index: 10;
-}
-
-.dropdown-content a {
-  color: #00ff00;
-  padding: 0.5em;
-  text-decoration: none;
-  display: block;
-  font-weight: bold;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* HERO SECTION */
+/* Main hero container split left/right */
 .hero {
   display: flex;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
+  overflow: hidden;
 }
 
+/* Left half with black gradient blend */
 .overlay-half {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: 100px;
+  width: 50vw;
   height: 100vh;
-  pointer-events: none;
-  background: linear-gradient(to right, black, transparent);
+  position: relative;
   z-index: 2;
 }
-
 
 .black-gradient {
   width: 100%;
   height: 100%;
-  padding: 2em;
+  /* Blend starts 50% minus 25px, smooth transition to transparent */
+  background: linear-gradient(to right, black calc(50% - 25px), transparent 50%);
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-start;
+  padding: 2em;
+  box-sizing: border-box;
 }
 
+/* Text content container */
 .text-box {
   max-width: 500px;
-  z-index: 3;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+/* Header */
 .text-box h1 {
   font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+/* Link blocks and details */
+
+.link-block {
+  display: block;
+  margin-bottom: 1em;
   font-weight: bold;
-  margin-bottom: 0.3em;
-  color: #00ff00;
-}
-
-.text-box p {
-  margin: 0.5em 0;
-  color: #00ff00;
-}
-
-/* LINK ROW under subtitle */
-.link-row {
-  margin: 1em 0;
-  display: flex;
-  gap: 1em;
-  flex-wrap: wrap;
-}
-
-.link-row a {
-  color: #00ff00;
-  font-weight: bold;
-  text-decoration: none;
   cursor: pointer;
 }
 
-/* COLLAPSIBLE CATEGORIES */
+.link-block a {
+  display: block;
+  margin: 0.25em 0;
+  color: #00ff00;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.link-block a:hover {
+  text-decoration: underline;
+}
+
 details summary {
   cursor: pointer;
   font-weight: bold;
   margin-top: 1em;
-  color: #00ff00;
+  list-style: none;
+  outline: none;
+  user-select: none;
 }
 
-details p {
+details p, details a {
   margin-left: 1em;
   margin-top: 0.5em;
   color: #00ff00;
 }
 
-/* BACKGROUND IMAGE */
+details a {
+  display: block;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+details a:hover {
+  text-decoration: underline;
+}
+
+/* Right half with GIF */
+
 .gif-container {
-  width: 100%;
+  width: 50vw;
   height: 100vh;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
-  z-index: 0;
+  z-index: 1;
 }
 
 .gif-container img {
@@ -144,4 +121,24 @@ details p {
   height: 100vh;
   object-fit: cover;
   object-position: right;
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
+  .overlay-half, .gif-container {
+    width: 100vw;
+    height: 50vh;
+  }
+  .gif-container {
+    position: relative;
+  }
+  .black-gradient {
+    padding: 1em;
+  }
+  .text-box h1 {
+    font-size: 1.5em;
+  }
 }
