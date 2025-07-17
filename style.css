@@ -61,14 +61,17 @@ body {
 }
 
 .overlay-half {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  background: linear-gradient(to right, black 0%, black calc(100% - 50px), rgba(0, 0, 0, 0) 100%);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100vh;
+  pointer-events: none;
+  background: linear-gradient(to right, black, transparent);
   z-index: 2;
 }
+
 
 .black-gradient {
   width: 100%;
