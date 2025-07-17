@@ -2,60 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>natived</title>
-  <link rel="stylesheet" href="style.css?v=5"/>
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body>
   <div class="navbar">
     <div class="dropdown">
-      <a href="#" class="dropbtn green-text">Objkt ▾</a>
+      <a href="#" class="dropbtn">Objkt ▾</a>
       <div class="dropdown-content">
-        <a href="https://objkt.com/@natived/" target="_blank" class="green-text">Natived</a>
-        <a href="https://objkt.com/users/tz1apGa8v4Y7W2Juu9Bzf4xqRg1ukc7diycy" target="_blank" class="green-text">AlterNatived_</a>
-        <a href="https://objkt.com/@generatived" target="_blank" class="green-text">Generatived</a>
+        <a href="https://objkt.com/@natived/" target="_blank">Natived</a>
+        <a href="https://objkt.com/users/tz1apGa8v4Y7W2Juu9Bzf4xqRg1ukc7diycy" target="_blank">AlterNatived_</a>
+        <a href="https://objkt.com/@generatived" target="_blank">Generatived</a>
       </div>
     </div>
-    <a href="https://opensea.io/collection/natived" target="_blank" class="green-text">Opensea</a>
-    <a href="https://x.com/natived_" target="_blank" class="green-text">X</a>
-    <a href="https://farcaster.xyz/natived" target="_blank" class="green-text">Farcaster</a>
+    <a href="https://opensea.io/collection/natived" target="_blank">Opensea</a>
+    <a href="https://x.com/natived_" target="_blank">X</a>
+    <a href="https://farcaster.xyz/natived" target="_blank">Farcaster</a>
   </div>
 
   <main class="hero">
     <div class="overlay-half">
-      <div class="text-section">
-        <h1 class="green-text">Visualizing a parallel present</h1>
-        <p class="green-text subtitle">Multidisciplinary digital artist, with the focus on 3D exploration, based in Italy.</p>
+      <div class="black-gradient">
+        <div class="text-box">
+          <h1 class="green-text">Visualizing a parallel present</h1>
+          <p class="green-text small-text">Multidisciplinary digital artist, with the focus on 3D exploration, based in Italy.</p>
+          
+          <details>
+            <summary class="green-text">Art</summary>
+            <p class="green-text">Exploring interactive environments, algorithmic aesthetics, and contemporary digital forms.</p>
+          </details>
 
-        <div class="dropdown-box">
-          <button class="dropdown-toggle green-text">Art ▾</button>
-          <div class="dropdown-box-content">
-            <p class="green-text">Exploring the frontiers of digital dimensions, my work blends 3D illusion, algorithmic aesthetics, and generative processes.</p>
-          </div>
-        </div>
-
-        <div class="dropdown-box">
-          <button class="dropdown-toggle green-text">About ▾</button>
-          <div class="dropdown-box-content">
-            <p class="green-text">Working across media, Natived's output spans code, generative systems, glitch, and immersive visual experiments inspired by a parallel now.</p>
-          </div>
+          <details>
+            <summary class="green-text">About</summary>
+            <p class="green-text">Natived is a multidisciplinary artist pushing the boundaries between reality and abstraction using digital media and procedural workflows.</p>
+          </details>
         </div>
       </div>
     </div>
-
     <div class="gif-container">
       <img src="pool.gif" alt="looping gif" />
     </div>
   </main>
-
-  <script>
-    // Dropdown toggle functionality
-    document.querySelectorAll(".dropdown-toggle").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const content = btn.nextElementSibling;
-        content.style.display = content.style.display === "block" ? "none" : "block";
-      });
-    });
-  </script>
 </body>
 </html>
