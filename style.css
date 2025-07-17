@@ -14,66 +14,16 @@ body {
   margin-bottom: 1em;
 }
 
-.navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-  padding: 0.5em;
-  border-bottom: 1px solid #00ff00;
-  position: fixed;
-  width: 100%;
-  z-index: 100;
-}
-
-.navbar a,
-.dropdown .dropbtn {
-  color: #00ff00;
-  text-decoration: none;
-  padding: 0.5em 1em;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: black;
-  min-width: 160px;
-  border: 1px solid #00ff00;
-  z-index: 1;
-  flex-direction: column;
-}
-
-.dropdown-content a {
-  padding: 0.5em;
-  display: block;
-}
-
-.dropdown:hover .dropdown-content {
-  display: flex;
-}
-
-.hero {
-  display: flex;
-  height: 100vh;
-  width: 100%;
-}
-
+/* FADE BLACK OVERLAY */
 .overlay-half {
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  background: linear-gradient(to right, black 0%, black calc(100% - 50px), rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to right, black 0%, black calc(50% - 25px), rgba(0, 0, 0, 0) 50%);
   z-index: 2;
 }
-
 
 .black-gradient {
   width: 100%;
@@ -87,6 +37,10 @@ body {
 .text-box {
   max-width: 500px;
   z-index: 3;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .text-box h1 {
@@ -101,6 +55,52 @@ body {
   color: #00ff00;
 }
 
+/* LINK SECTION BELOW SUBTITLE */
+.link-section {
+  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.link-section a,
+.link-section .dropbtn {
+  color: #00ff00;
+  text-decoration: none;
+  padding: 0.3em 0;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: monospace;
+  text-align: left;
+}
+
+/* DROPDOWN STYLE FOR OBJKT */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  border: 1px solid #00ff00;
+  padding: 0.5em;
+  z-index: 10;
+  flex-direction: column;
+}
+
+.dropdown-content a {
+  padding: 0.3em 0;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+/* DETAILS SECTION (ART & ABOUT) */
 details summary {
   cursor: pointer;
   font-weight: bold;
@@ -114,6 +114,7 @@ details p {
   color: #00ff00;
 }
 
+/* GIF STYLING */
 .gif-container {
   width: 100%;
   height: 100vh;
@@ -129,4 +130,11 @@ details p {
   height: 100vh;
   object-fit: cover;
   object-position: right;
+}
+
+/* HERO FLEXBOX CONTAINER */
+.hero {
+  display: flex;
+  height: 100vh;
+  width: 100%;
 }
