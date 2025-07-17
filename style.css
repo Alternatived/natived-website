@@ -14,14 +14,59 @@ body {
   margin-bottom: 1em;
 }
 
-/* FADE BLACK OVERLAY */
+/* DROPDOWN FOR OBJKT */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin: 0 0.5em;
+}
+
+.dropdown .dropbtn {
+  color: #00ff00;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: monospace;
+  font-size: 1em;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  border: 1px solid #00ff00;
+  min-width: 160px;
+  z-index: 10;
+}
+
+.dropdown-content a {
+  color: #00ff00;
+  padding: 0.5em;
+  text-decoration: none;
+  display: block;
+  font-weight: bold;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
 .overlay-half {
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  background: linear-gradient(to right, black 0%, black calc(50% - 25px), rgba(0, 0, 0, 0) 50%);
+  background: linear-gradient(to right, black 0%, black calc(100% - 50px), rgba(0, 0, 0, 0) 100%);
   z-index: 2;
 }
 
@@ -37,10 +82,6 @@ body {
 .text-box {
   max-width: 500px;
   z-index: 3;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .text-box h1 {
@@ -55,52 +96,22 @@ body {
   color: #00ff00;
 }
 
-/* LINK SECTION BELOW SUBTITLE */
-.link-section {
+/* LINK ROW under subtitle */
+.link-row {
   margin: 1em 0;
   display: flex;
-  flex-direction: column;
-  gap: 0.3em;
+  gap: 1em;
+  flex-wrap: wrap;
 }
 
-.link-section a,
-.link-section .dropbtn {
+.link-row a {
   color: #00ff00;
-  text-decoration: none;
-  padding: 0.3em 0;
   font-weight: bold;
+  text-decoration: none;
   cursor: pointer;
-  background: none;
-  border: none;
-  font-family: monospace;
-  text-align: left;
 }
 
-/* DROPDOWN STYLE FOR OBJKT */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: black;
-  border: 1px solid #00ff00;
-  padding: 0.5em;
-  z-index: 10;
-  flex-direction: column;
-}
-
-.dropdown-content a {
-  padding: 0.3em 0;
-  display: block;
-}
-
-.dropdown:hover .dropdown-content {
-  display: flex;
-}
-
-/* DETAILS SECTION (ART & ABOUT) */
+/* COLLAPSIBLE CATEGORIES */
 details summary {
   cursor: pointer;
   font-weight: bold;
@@ -114,7 +125,7 @@ details p {
   color: #00ff00;
 }
 
-/* GIF STYLING */
+/* BACKGROUND IMAGE */
 .gif-container {
   width: 100%;
   height: 100vh;
@@ -130,11 +141,4 @@ details p {
   height: 100vh;
   object-fit: cover;
   object-position: right;
-}
-
-/* HERO FLEXBOX CONTAINER */
-.hero {
-  display: flex;
-  height: 100vh;
-  width: 100%;
 }
