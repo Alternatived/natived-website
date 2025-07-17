@@ -70,7 +70,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  background: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to right, black 0%, black 65%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 0) 100%);
   z-index: 2;
 }
 
