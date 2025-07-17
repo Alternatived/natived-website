@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>natived</title>
-  <link rel="stylesheet" href="style.css?v=3" />
-  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
+  <canvas id="wireframe-canvas"></canvas>
+
   <div class="navbar">
     <a href="#">Home</a>
     <div class="dropdown">
@@ -22,14 +23,16 @@
   </div>
 
   <main>
-    <section class="terminal-section">
+    <section class="terminal-container">
       <div class="terminal">
         <div class="terminal-output" id="terminal-output">
           <p>&gt; Type <strong>help</strong> to explore</p>
         </div>
         <input type="text" id="terminal-input" autocomplete="off" autofocus />
+        <pre id="terminal-response"></pre>
       </div>
     </section>
+
     <section id="info-section" class="hidden">
       <div id="about" class="info-box hidden">
         <h2>About</h2>
@@ -46,9 +49,6 @@
     </section>
   </main>
 
-  <canvas id="shader-canvas"></canvas>
-
-  <script src="shader.js?v=3"></script>
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
