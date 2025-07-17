@@ -3,37 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>natived :: terminal</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>natived</title>
+  <link rel="stylesheet" href="style.css?v=3" />
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
 </head>
 <body>
-  <canvas id="wireframe-canvas"></canvas>
-
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="dropdown">
-        <button class="dropbtn">Objkt ▾</button>
-        <div class="dropdown-content">
-          <a href="https://objkt.com/@natived" target="_blank">Natived</a>
-          <a href="https://objkt.com/users/tz1apGa8v4Y7W2Juu9Bzf4xqRg1ukc7diycy" target="_blank">Alternatived</a>
-          <a href="https://objkt.com/@generatived" target="_blank">Generatived</a>
-        </div>
+  <div class="navbar">
+    <a href="#">Home</a>
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Objkt ▾</a>
+      <div class="dropdown-content">
+        <a href="https://objkt.com/profile/alternatived/created" target="_blank">Objkt Profile</a>
+        <a href="https://objkt.com/tz/tz1PirnbiT6y2sRg2BaNjSC7p5oxkJrYqYFe" target="_blank">Wallet</a>
       </div>
-      <a href="https://opensea.io/collection/natived" target="_blank">Opensea</a>
-      <a href="https://x.com/natived_" target="_blank">X</a>
-      <a href="https://farcaster.xyz/natived" target="_blank">Farcaster</a>
     </div>
-  </nav>
+    <a href="https://x.com/alternatived" target="_blank">X</a>
+    <a href="https://warpcast.com/alternatived" target="_blank">Farcaster</a>
+  </div>
 
-  <main class="terminal-container">
-    <div class="terminal">
-      <div class="line">Welcome to <span class="highlight">natived</span>'s terminal</div>
-      <div class="line">Type <span class="command">help</span> to learn more.</div>
-      <div class="input-line"><span>&gt; </span><input id="terminal-input" autocomplete="off" autofocus /></div>
-      <div id="terminal-response"></div>
-    </div>
+  <main>
+    <section class="terminal-section">
+      <div class="terminal">
+        <div class="terminal-output" id="terminal-output">
+          <p>&gt; Type <strong>help</strong> to explore</p>
+        </div>
+        <input type="text" id="terminal-input" autocomplete="off" autofocus />
+      </div>
+    </section>
+    <section id="info-section" class="hidden">
+      <div id="about" class="info-box hidden">
+        <h2>About</h2>
+        <p>natived is a digital entity exploring post-visual noise through pixel, glitch, and illusion. Reality bending art coded and crafted on-chain.</p>
+      </div>
+      <div id="art" class="info-box hidden">
+        <h2>Art</h2>
+        <ul>
+          <li><a href="https://objkt.com/asset/bafybeicmcs67f2c64pyx7bkdfiwifqoreecheb463yscrwtodhgtolopve" target="_blank">Piece 1</a></li>
+          <li><a href="https://objkt.com/asset/bafybeihwdy67galolmspdjxm3l3tisdqnwu4caecaj4fdnczvlmumscbvq" target="_blank">Piece 2</a></li>
+          <li><a href="https://objkt.com/asset/bafybeihmwgmzyea5ni4faz6socal4gski2rllyibi4zmasbymudznwc57u" target="_blank">Piece 3</a></li>
+        </ul>
+      </div>
+    </section>
   </main>
 
-  <script src="script.js"></script>
+  <canvas id="shader-canvas"></canvas>
+
+  <script src="shader.js?v=3"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
