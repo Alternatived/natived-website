@@ -2,45 +2,170 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>natived</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=5" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      font-family: monospace;
+      background: black;
+      color: #00FF00;
+    }
+
+    .green-text {
+      color: #00FF00;
+      text-decoration: none;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: black;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 20;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .hero {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+    }
+
+    .overlay-half {
+      width: 50vw;
+      height: 100vh;
+      position: relative;
+      z-index: 2;
+    }
+
+    .black-gradient {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, black calc(50% - 25px), transparent 50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text-box {
+      max-width: 80%;
+      text-align: left;
+    }
+
+    .text-box h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+
+    .text-box .subtitle {
+      margin-bottom: 1em;
+    }
+
+    .link-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3em;
+      margin-bottom: 1em;
+    }
+
+    .link-block a,
+    .link-block .dropbtn {
+      color: #00FF00;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: monospace;
+    }
+
+    .gif-container {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .gif-container img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    details summary {
+      cursor: pointer;
+      margin-top: 1em;
+    }
+
+    @media screen and (max-width: 768px) {
+      .text-box h1 {
+        font-size: 1.5em;
+      }
+
+      .text-box {
+        max-width: 90%;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="hero">
+  <main class="hero">
     <div class="overlay-half">
       <div class="black-gradient">
-        <div class="text-box green-text">
-          <h1>natived</h1>
-          <p class="small-text">an experimental terminal of a mind always online</p>
-
-          <!-- 👇 New link block inserted here -->
-          <div class="terminal-links">
-            <details>
-              <summary>Objkt</summary>
-              <a href="https://objkt.com/profile/alternatived/created" target="_blank">created</a>
-              <a href="https://objkt.com/profile/alternatived/collections" target="_blank">collections</a>
-              <a href="https://objkt.com/profile/alternatived/favorites" target="_blank">favorites</a>
-            </details>
-            <a href="https://opensea.io/alternatived" target="_blank">Opensea</a>
-            <a href="https://x.com/alternatived" target="_blank">X</a>
-            <a href="https://warpcast.com/alternatived" target="_blank">Farcaster</a>
+        <div class="text-box">
+          <h1 class="green-text">Visualizing a parallel present</h1>
+          <p class="green-text subtitle">Multidisciplinary digital artist, with the focus on 3D exploration, based in Italy.</p>
+          <div class="link-block">
+            <div class="dropdown">
+              <span class="dropbtn">Objkt ▾</span>
+              <div class="dropdown-content">
+                <a class="green-text" href="https://objkt.com/@natived/" target="_blank">Natived</a>
+                <a class="green-text" href="https://objkt.com/users/tz1apGa8v4Y7W2Juu9Bzf4xqRg1ukc7diycy" target="_blank">AlterNatived_</a>
+                <a class="green-text" href="https://objkt.com/@generatived" target="_blank">Generatived</a>
+              </div>
+            </div>
+            <a class="green-text" href="https://opensea.io/collection/natived" target="_blank">Opensea</a>
+            <a class="green-text" href="https://x.com/natived_" target="_blank">X</a>
+            <a class="green-text" href="https://farcaster.xyz/natived" target="_blank">Farcaster</a>
           </div>
-
-          <details>
+          <details class="green-text">
             <summary>Art</summary>
-            <p>Visual works from generative experiments and glitch-based systems. Often on-chain, always personal.</p>
+            <p>Digital works focused on generative systems, 3D environments and perception manipulation.</p>
           </details>
-          <details>
+          <details class="green-text">
             <summary>About</summary>
-            <p>Natived is a digitally native artist exploring the crossroads of code, identity, and internet nostalgia.</p>
+            <p>Exploring creative code, metaphysical visuals, and alternate digital realities from Italy.</p>
           </details>
         </div>
       </div>
     </div>
     <div class="gif-container">
-      <img src="media/distortion.gif" alt="Distortion Art" />
+      <img src="loop.gif" alt="looping gif" />
     </div>
-  </div>
+  </main>
 </body>
 </html>
